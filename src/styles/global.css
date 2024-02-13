@@ -5,8 +5,8 @@ html {
 }
 
 body {
-    max-width: auto;
-    margin: 0 auto;
+    width: auto;
+    margin: 15px;
     text-align: justify;
 }
 
@@ -43,11 +43,10 @@ p {
 
 /* Gifs */
 .gif {
-    /* margin: 20px 0 0 0; */
+    margin: 20px 0 0 0;
     text-align: center;
     height: auto;
     width: auto;
-    display: block;
 }
 
 
