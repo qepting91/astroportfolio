@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+const pageTitle = "Portfolio";
+---
+<Layout pageTitle={pageTitle}>
+    <div class="gif">
+        <img width="300" height="259" alt="TechGif" src="/techgif.webp"/>
+    </div>
+    <h1>Welcome</h1>
+    <small>Quinten Epting (Developer)</small>
+    <h2>About</h2>
+    <p>
+        I'm Quinten Epting, a seasoned technologist with a passion for solving complex problems 
+        through innovative technology solutions. With a rich background in cybersecurity, law enforcement, 
+        and military operations, I leverage my diverse experiences to bring a unique perspective to software engineering. 
+        My expertise spans full-stack development, cloud technologies, and compliance standards, making me a dynamic asset 
+        in any tech environment. As a continuous learner, I'm always eager to tackle new challenges and am committed to delivering 
+        outstanding results.
+    </p>
+    <div class="button">
+        <a href="/works/">
+            <button class="button">My Projects</button>
+        </a>
+    </div>
+    <h2>Skills</h2>
+    <div class="link-images">
+        <img width="46" height="46" alt="Python" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"/>
+        <img width="46" height="46" alt="Streamlit" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg"/>
+        <img width="46" height="46" alt="MongoDB" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"/>
+        <img width="46" height="46" alt="React" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"/>
+        <img width="46" height="46" alt="Netlify" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg" />
+        <img width="46" height="46" alt="CSS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg"/>
+        <img width="46" height="46" alt="HTML" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg"/>
+        <img width="46" height="46" alt="JavaScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg"/>
+        <img width="46" height="46" alt="PostGres" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"/>
+    </div>
+    <h2>Interests</h2>
+    <p>
+        Beyond my professional life, I'm deeply fascinated by all areas of technology, from automation and development to cybersecurity. My enthusiasm doesn't stop there; 
+        I'm a big fan of Star Wars and Power Rangers, blending my love for epic narratives with my tech interests. Outside the digital world, I enjoy coaching my son's T-ball team, 
+        an experience that enriches my life with community spirit and teamwork. These diverse interests reflect my belief in the importance of balance—embracing both high-tech pursuits 
+        and the simple joys of family time and fandom.
+    </p>
+</Layout>
+<style>
+    /* small */
+    small {
+        display: grid;
+        place-items: center;
+        background-color: #584966;
+        color: #fdebf3;
+        border-radius: 6px;
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 600;
+        padding: 0.3em 0.6em 0.2em;
+    }
+
+    /* Button */
+    button {
+        background: rgba(0,0,0,0);
+        border: 2px solid #78c2ad;
+        border-radius: 8px;
+        color: #999597;
+        font: 600 16px 'Josefin Sans', sans-serif;
+        padding: 8px 16px;
+        transition: background-color 0.4s, color 0.4s;
+    }
+
+    button:hover {
+        background-color: #78c2ad;
+        color: #1e1e2e;
+        cursor: pointer;
+    }
+
+    .button {
+        text-align: center;
+    }
+
+    /* Skill images */
+    .link-images img {
+        margin: 16px 4px;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .link-images img {
+            height: 30px;
+            width: 30px;
+            margin: 16px 1px;
+        }
+    }
+</style>

@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+const allProjects = await Astro.glob('../pages/projects/*.md');
+const pageTitle = "Projects";
+---
+<Layout pageTitle={pageTitle}>
+    <div class="gifproject">
+        <img alt="ProjectGif" src="/projectgif.webp"/>
+    </div>
+    <h2>Projects</h2>
+    <ul role="list" class="link-card-grid">
+        {allProjects.map((card) => <Card 
+            url={card.url} 
+            image={card.frontmatter.image.url} 
+            title={card.frontmatter.title} 
+            body={card.frontmatter.description}
+        />)}
+    </ul>
+</Layout>
+<style>
+ .gifproject {
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Centers the image vertically if needed */
+    width: 100%; /* Ensures the .gif div takes the full width of its parent */
+}
+
+.gifproject img {
+    max-width: 259px; /* Ensures the image is responsive and scales with the container's width */
+    max-height: 300px; /* Sets a maximum height for the image */
+    height: auto; /* Maintains the aspect ratio */
+    object-fit: contain; /* Ensures the image fits within the max dimensions without cropping */
+}
+</style>

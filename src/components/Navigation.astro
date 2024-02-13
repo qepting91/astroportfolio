@@ -1,0 +1,74 @@
+---
+import ThemeIcon from './ThemeIcon.astro';
+---
+<div class="nav-bar">
+    <div class="title-link">
+        <a href="/">Portfolio</a>
+        <ThemeIcon />
+        <!-- Toggle button for the navbar -->
+        <button class="toggle-button">Navigation</button>
+    </div>
+    <div class="nav-links">
+        <a href="/projects/">Projects</a>
+        <a href="/posts/">Posts</a>
+        <a href="/resume/">Resume</a>
+        <a href="https://github.com/qepting91" target="_blank">GitHub</a>
+    </div>
+</div>
+<script type="module">
+    document.querySelector('.toggle-button').addEventListener('click', () => {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    });
+</script>
+<style>
+    .nav-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1rem;
+        /* Initially hidden on smaller screens */
+    }
+
+    .nav-links.active {
+        /* Show when active */
+        display: flex;
+    }
+
+    .toggle-button {
+        /* Styles for the toggle button */
+        background-color: #333;
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 5px;
+        display: none;
+    }
+
+    /* Show navbar links on wider screens without needing to click toggle */
+    @media (max-width: 768px) { /* Adjust this value based on your design */
+    .toggle-button {
+        display: block; /* Show the button on smaller screens */
+        /* Rest of your button styling */
+        background-color: #333;
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .nav-links {
+        display: none; /* Ensure navigation links are hidden when the toggle button is shown */
+    }
+    }
+
+    .nav-links.active {
+        display: flex; /* This will show the nav links when the toggle button is clicked and `.active` class is added */
+    }
+</style>
