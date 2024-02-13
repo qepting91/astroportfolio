@@ -77,8 +77,15 @@ const pageTitle = "Portfolio";
     }
 
     /* Skill images */
+    .link-images {
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        align-items: center; 
+        gap: 10px;
+    }
     .link-images img {
-        margin: 16px 4px;
+        margin: 8px;
     }
 
     @media only screen and (max-width: 600px) {
@@ -86,6 +93,7 @@ const pageTitle = "Portfolio";
             height: 30px;
             width: 30px;
             margin: 16px 1px;
+            align-items: center;
         }
     }
 </style>
