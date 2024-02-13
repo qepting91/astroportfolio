@@ -4,11 +4,12 @@ interface Props {
     image: string;
     title: string;
     body: string;
+    className?: string;
 }
 
-const { url, image, title, body } = Astro.props;
+const { url, image, title, body, className } = Astro.props;
 ---
-<li class="link-card">
+<div class={`link-card ${className ?? ''}`}> <!-- Use a div and apply the className -->
     <a href={url}>
         <div class="img">
             <img width="226" height="127" src={image} class="card-img" alt="ProjectImage">
@@ -20,7 +21,7 @@ const { url, image, title, body } = Astro.props;
 	    {body}
         </p>
     </a>
-</li>
+</div>
 <style>
     .link-card {
         list-style: none;

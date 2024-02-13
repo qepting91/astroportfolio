@@ -6,15 +6,49 @@ const pageTitle = "Projects";
 ---
 <Layout pageTitle={pageTitle}>
     <div class="gif">
-        <img width="300" height="259"  alt="ProjectGif" src="/projectgif.webp"/>
+        <img width="300" height="259" alt="ProjectGif" src="/projectgif.webp"/>
     </div>
     <h2>Projects</h2>
-    <ul role="list" class="link-card-grid">
-        {allProjects.map((card) => <Card 
-            url={card.url} 
-            image={card.frontmatter.image.url} 
-            title={card.frontmatter.title} 
-            body={card.frontmatter.description}
-        />)}
-    </ul>
+    <div class="projects-wrapper"> <!-- Use a div with .projects-wrapper for flex layout -->
+        {allProjects.map((card) => (
+            <Card 
+                url={card.url} 
+                image={card.frontmatter.image.url} 
+                title={card.frontmatter.title} 
+                body={card.frontmatter.description}
+                className="project-item" 
+            />
+        ))}
+    </div>
 </Layout>
+<style>
+    .projects-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Creates a 3-column grid */
+        gap: 20px; /* Space between grid items */
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .project-item {
+        background-color: #f0f0f0;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 768px) {
+        .projects-wrapper {
+            grid-template-columns: repeat(2, 1fr); /* Switches to a 2-column grid for tablets and similar sizes */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .projects-wrapper {
+            grid-template-columns: 1fr; /* Full width for very small screens */
+        }
+        .project-item {
+            width: auto; /* Resets any specific width to use grid's width */
+        }
+    }
+</style>

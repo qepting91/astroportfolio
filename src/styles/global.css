@@ -43,10 +43,10 @@ p {
 
 /* Gifs */
 .gif {
-    margin: 20px 0 0 0;
+    margin: 20px auto;
     text-align: center;
     height: auto;
-    width: auto;
+    max-width: 100%;
 }
 
 
@@ -178,9 +178,9 @@ html.light {
 /* Media Query */
 @media only screen and (max-width: 600px) {
     body {
-        width: 320px;
+        width: 85%;
+        margin: 10px auto;
     }
-
     .nav-bar {
         display: initial;
     }
