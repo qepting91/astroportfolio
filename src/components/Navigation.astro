@@ -23,52 +23,48 @@ import ThemeIcon from './ThemeIcon.astro';
 </script>
 <style>
     .nav-bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    .nav-links {
-        display: flex;
-        gap: 1rem;
-        /* Initially hidden on smaller screens */
-    }
+.nav-links {
+    display: flex;
+    gap: 1rem; /* Keep for spacing between links */
+    /* Initially hidden on smaller screens */
+}
 
-    .nav-links.active {
-        /* Show when active */
-        display: flex;
-    }
+.nav-links.active {
+    /* Show when active, and adjust for mobile layout */
+    display: flex;
+    flex-direction: column; /* Stack links vertically on mobile */
+    gap: 0.5rem; /* You might want to adjust the gap for the vertical layout */
+}
 
-    .toggle-button {
-        /* Styles for the toggle button */
-        background-color: #333;
-        color: white;
-        border: none;
-        cursor: pointer;
-        padding: 10px;
-        border-radius: 5px;
-        display: none;
-    }
+.toggle-button {
+    /* Styles for the toggle button */
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+}
 
-    /* Show navbar links on wider screens without needing to click toggle */
-    @media (max-width: 768px) { /* Adjust this value based on your design */
+@media (max-width: 768px) {
     .toggle-button {
         display: block; /* Show the button on smaller screens */
-        /* Rest of your button styling */
-        background-color: #333;
-        color: white;
-        border: none;
-        cursor: pointer;
-        padding: 10px;
-        border-radius: 5px;
     }
 
     .nav-links {
-        display: none; /* Ensure navigation links are hidden when the toggle button is shown */
-    }
+        display: none; /* Ensure navigation links are hidden initially */
     }
 
     .nav-links.active {
-        display: flex; /* This will show the nav links when the toggle button is clicked and `.active` class is added */
+        display: flex;
+        flex-direction: column; /* This ensures links are in a column when active */
+        align-items: center; /* Optional: Center-align the links for a neater appearance */
     }
+}
 </style>
