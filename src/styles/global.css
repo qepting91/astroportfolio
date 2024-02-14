@@ -5,8 +5,8 @@ html {
 }
 
 body {
-    width: auto;
-    margin: 15px;
+    width: 65%;
+    margin: 15px auto;
     text-align: justify;
 }
 
@@ -46,7 +46,7 @@ p {
     margin: 20px auto;
     text-align: center;
     height: auto;
-    max-width: 100%;
+    object-fit: cover;
 }
 
 

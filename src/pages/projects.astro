@@ -22,33 +22,43 @@ const pageTitle = "Projects";
     </div>
 </Layout>
 <style>
+.projects-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates a 3-column grid */
+    gap: 20px; /* Space between grid items */
+    justify-content: center;
+    padding: 20px;
+}
+
+.project-item {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content is spaced out */
+}
+
+.project-item img {
+    width: 100%; /* Ensure the image fills the width of the .project-item */
+    height: auto; /* Adjust based on the aspect ratio of the image */
+    object-fit: cover; /* Image will scale to fit its container */
+    margin-bottom: 15px; /* Space between image and text content */
+}
+
+@media (max-width: 768px) {
     .projects-wrapper {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* Creates a 3-column grid */
-        gap: 20px; /* Space between grid items */
-        justify-content: center;
-        padding: 20px;
+        grid-template-columns: repeat(2, 1fr); /* Adjusts to a 2-column grid for smaller devices */
     }
+}
 
+@media (max-width: 480px) {
+    .projects-wrapper {
+        grid-template-columns: 1fr; /* Full width for very small screens */
+    }
     .project-item {
-        background-color: #f0f0f0;
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        width: auto; /* Allows the item to grow or shrink as needed */
     }
-
-    @media (max-width: 768px) {
-        .projects-wrapper {
-            grid-template-columns: repeat(2, 1fr); /* Switches to a 2-column grid for tablets and similar sizes */
-        }
-    }
-
-    @media (max-width: 480px) {
-        .projects-wrapper {
-            grid-template-columns: 1fr; /* Full width for very small screens */
-        }
-        .project-item {
-            width: auto; /* Resets any specific width to use grid's width */
-        }
-    }
+}
 </style>
