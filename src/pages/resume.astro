@@ -1,137 +1,252 @@
 ---
 // Import the Layout component
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
 // Define page title
-const pageTitle = 'Resume';
+const pageTitle = "Resume";
 
 // Resume content structured for AstroJS
 const resume = {
   personalInfo: {
-    name: 'Quinten Epting',
+    name: "Quinten Epting",
   },
   summary: `Seasoned technologist with a robust background in cybersecurity, law enforcement, military operations, and full-stack development. A continuous learner eager to solve complex problems and deliver outstanding results.`,
   // Experiences Section
-    experience: [
-  {
-    role: 'Federal Staff Consultant',
-    company: 'A-lign',
-    period: 'May 2023 - Present',
-    tasks: [
-      'Translate complex federal security compliance requirements for cloud implementations (GCP, AWS, Azure).',
-      'Conduct code review and documentation analysis for FedRAMP assessments identifying critical security gaps.',
-    ],
-  },
-  {
-    role: 'OSINT Analyst/Developer',
-    company: 'Overt Operator',
-    period: 'Jan 2023 - Present',
-    tasks: [
-      'Developed internal web app for news article automation using Python, saving 160 hours/month.',
-      'Performed manual code reviews to ensure security best practices.',
-    ],
-  },
-  {
-    role: 'Technical Service Technician',
-    company: 'Patterson Dental',
-    period: 'May 2021 - May 2023',
-    tasks: [
-      'Managed customer service ticketing system, improving troubleshooting process.',
-      'Initiated local network setups and provided technical maintenance.',
-    ],
-  },
-  {
-    role: 'Risk Security Analyst',
-    company: 'PwC',
-    period: 'January 2020 - May 2021',
-    tasks: [
-      'Led tech initiatives using Alteryx, Tableau, and Python for process automation, saving 40 hours of billable time.',
-      'Conducted AML and MFI investigations using LexisNexis and OSINT tools.',
-    ],
-  },
-  {
-    role: 'Pharmaceuticals Investigator',
-    company: 'Nephron Pharmaceuticals',
-    period: 'March 2019 – October 2019',
-    tasks: [
-      'Conducted research and investigations into compliance areas, applying Root Cause Analysis.',
-    ],
-  },
-  {
-    role: 'Police Officer',
-    company: 'Batesburg-Leesville Police Department',
-    period: 'January 2018 – March 2019',
-    tasks: [
-      'Created gang intelligence task force, conducted analyses on active gangs.',
-    ],
-  },
-  {
-    role: 'Military Police',
-    company: 'United States Army',
-    period: 'March 2013 – June 2015',
-    tasks: [
-      'Secured crime scenes, processed evidence, provided site security during operations.',
-    ],
-  },
-],
-education: [
-  {
-    degree: 'M.S. Criminal Justice/Forensic Psychology',
-    institution: 'Liberty University',
-    graduated: '2019',
-  },
-  {
-    degree: 'B.A. Criminology',
-    institution: 'University of South Carolina',
-    graduated: '2012',
-  },
-  {
-    degree: 'Full-Stack Bootcamp',
-    institution: 'SavvyCoders',
-    skills: 'HTML, CSS, Javascript, Web APIs, MongoDB, Trello, Node.js/Express.js, UI/UX, Agile',
-    graduated: '2024',
-  },
-],
+  experience: [
+    {
+      role: "Federal Staff Consultant",
+      company: "A-lign",
+      period: "May 2023 - Present",
+      tasks: [
+        "Translate complex federal security compliance requirements for cloud implementations (GCP, AWS, Azure).",
+        "Conduct code review and documentation analysis for FedRAMP assessments identifying critical security gaps.",
+      ],
+    },
+    {
+      role: "OSINT Analyst/Developer",
+      company: "Overt Operator",
+      period: "Jan 2023 - Present",
+      tasks: [
+        "Developed internal web app for news article automation using Python, saving 160 hours/month.",
+        "Performed manual code reviews to ensure security best practices.",
+      ],
+    },
+    {
+      role: "Technical Service Technician",
+      company: "Patterson Dental",
+      period: "May 2021 - May 2023",
+      tasks: [
+        "Managed customer service ticketing system, improving troubleshooting process.",
+        "Initiated local network setups and provided technical maintenance.",
+      ],
+    },
+    {
+      role: "Risk Security Analyst",
+      company: "PwC",
+      period: "January 2020 - May 2021",
+      tasks: [
+        "Led tech initiatives using Alteryx, Tableau, and Python for process automation, saving 40 hours of billable time.",
+        "Conducted AML and MFI investigations using LexisNexis and OSINT tools.",
+      ],
+    },
+    {
+      role: "Pharmaceuticals Investigator",
+      company: "Nephron Pharmaceuticals",
+      period: "March 2019 – October 2019",
+      tasks: [
+        "Conducted research and investigations into compliance areas, applying Root Cause Analysis.",
+      ],
+    },
+    {
+      role: "Police Officer",
+      company: "Batesburg-Leesville Police Department",
+      period: "January 2018 – March 2019",
+      tasks: [
+        "Created gang intelligence task force, conducted analyses on active gangs.",
+      ],
+    },
+    {
+      role: "Military Police",
+      company: "United States Army",
+      period: "March 2013 – June 2015",
+      tasks: [
+        "Secured crime scenes, processed evidence, provided site security during operations.",
+      ],
+    },
+  ],
+  education: [
+    {
+      degree: "M.S. Criminal Justice/Forensic Psychology",
+      institution: "Liberty University",
+      graduated: "2019",
+    },
+    {
+      degree: "B.A. Criminology",
+      institution: "University of South Carolina",
+      graduated: "2012",
+    },
+    {
+      degree: "Full-Stack Bootcamp",
+      institution: "SavvyCoders",
+      skills:
+        "HTML, CSS, Javascript, Web APIs, MongoDB, Trello, Node.js/Express.js, UI/UX, Agile",
+      graduated: "2024",
+    },
+  ],
   certifications: [
-    'ITIL v4 Foundation',
-    'Coursera DevOps on AWS Specialization',
-    'ICAgile Foundations',
+    "ITIL v4 Foundation",
+    "Coursera DevOps on AWS Specialization",
+    "ICAgile Foundations",
   ],
 };
 ---
 
 <Layout pageTitle={pageTitle}>
-    <h1>{resume.personalInfo.name}'s Resume</h1>
-    <p>{resume.summary}</p>
-  
-    <h2>Professional Experience</h2>
-    <ul>
-      {resume.experience.map((item) => (
+  <h1>{resume.personalInfo.name}'s Resume</h1>
+  <p>{resume.summary}</p>
+
+  <h2>Professional Experience</h2>
+  <ul>
+    {
+      resume.experience.map((item) => (
         <li>
-          <h3>{item.role} at {item.company}</h3>
+          <h3>
+            {item.role} at {item.company}
+          </h3>
           <p>{item.period}</p>
           <ul>
-            {item.tasks.map((task) => <li>{task}</li>)}
+            {item.tasks.map((task) => (
+              <li>{task}</li>
+            ))}
           </ul>
         </li>
-      ))}
-    </ul>
-  
-    <h2>Education</h2>
-    <ul>
-      {resume.education.map((edu) => (
+      ))
+    }
+  </ul>
+
+  <h2>Education</h2>
+  <ul>
+    {
+      resume.education.map((edu) => (
         <li>
-          <h3>{edu.degree}, {edu.institution}</h3>
+          <h3>
+            {edu.degree}, {edu.institution}
+          </h3>
           <p>Graduated: {edu.graduated}</p>
-          {edu.skills ? <p>Skills: {edu.skills}</p> : ''}
+          {edu.skills ? <p>Skills: {edu.skills}</p> : ""}
         </li>
-      ))}
-    </ul>
-  
-    <h2>Certifications</h2>
-    <ul>
-      {resume.certifications.map((certification) => (
-        <li>{certification}</li>
-      ))}
-    </ul>
-  </Layout>
+      ))
+    }
+  </ul>
+
+  <h2>Certifications</h2>
+  <ul>
+    {resume.certifications.map((certification) => <li>{certification}</li>)}
+  </ul>
+</Layout>
+<style>
+  .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Typography */
+  h1,
+  h2,
+  h3 {
+    font-family: "Georgia", serif;
+  }
+
+  h1 {
+    font-size: 20px;
+    margin-bottom: 0.5em;
+  }
+
+  h2 {
+    font-size: 18px;
+    color: #2a5078; /* Dark blue for better visual hierarchy */
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+
+  h3 {
+    font-size: 18px;
+    margin-bottom: 0.2em;
+  }
+
+  p {
+    margin-bottom: 12px;
+  }
+
+  /* Section & Layout */
+  .section {
+    margin-bottom: 2em;
+  }
+
+  .list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .list-item {
+    margin-bottom: 5px;
+  }
+
+  .list-item:before {
+    content: "–";
+    margin-right: 5px;
+    color: #555;
+  }
+
+  /* Color & Contrast */
+  .section-heading {
+    color: #2a5078;
+    border-bottom: 2px solid #2a5078;
+    padding-bottom: 4px;
+  }
+
+  a {
+    color: #2a5078;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Skills & Keywords */
+  .skill,
+  .keyword {
+    background-color: #e8f0fe;
+    color: #333;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 14px;
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    h2 {
+      font-size: 20px;
+    }
+
+    h3,
+    .section-heading {
+      font-size: 18px;
+    }
+  }
+</style>
