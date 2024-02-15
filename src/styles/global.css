@@ -49,6 +49,10 @@ p {
     object-fit: cover;
 }
 
+.gif img {
+    border-radius: 16px; 
+}
+
 
 /* Navigation Bar */
 .nav-bar {
