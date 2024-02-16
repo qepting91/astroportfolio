@@ -117,13 +117,6 @@ p {
     content: url("/li-in-white.png");
 }
 
-/* Card listing */
-.link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 1rem;
-    padding: 0;
-}
 
 /* Theme Icon */
 html.light {

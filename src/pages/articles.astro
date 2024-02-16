@@ -1,0 +1,166 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+const pageTitle = "Articles";
+---
+<Layout pageTitle={pageTitle}>
+    <div class="gif">
+        <img width="300" height="259" alt="WritingGif" src="/writinggif.webp"/>
+    </div>
+    <h2>Articles</h2>
+    <div class="articles-wrapper">
+        <ul role="list" class="link-card-grid">
+            <Card
+                url="https://www.overtoperator.com/p/aigeneratedimagesrisks"
+                image="/deceptionposts.webp"
+                title="The High Stakes Deception of the Digital Age"
+                body="Security Risks Posed By AI-Generated Images"
+            />
+        </ul>
+        <ul role="list" class="link-card-grid">
+            <Card
+                url="https://medium.com/@qepting91/chromes-dark-side-malware-extensions-plunder-facebook-and-gmail-users-9df68c5977e5"
+                image="/ai_tamingthebeast.png"
+                title="Chrome's Dark Side: Malware Extensions Plunder Facebook and Gmail Users"
+                body="Previously published on overtoperator.com, migrated to Medium"
+            />
+        </ul>
+        <ul role="list" class="link-card-grid">
+            <Card
+                url="https://medium.com/@qepting91/russia-moves-nuclear-weapons-to-belarus-heightening-regional-tensions-f904e219a2b0"
+                image="/nuclear.png"
+                title="Russia Moves Nuclear Weapons to Belarus, Heightening Regional Tensions"
+                body="Previously published on overtoperator.com, migrated to Medium"
+            />
+        </ul>
+        <ul role="list" class="link-card-grid">
+            <Card
+                url="https://medium.com/@qepting91/on-wednesday-april-5-us-house-speaker-kevin-mccarthy-met-with-taiwanese-president-tsai-ing-wen-8ae1ff97cf78"
+                image="/capitol.png"
+                title="China Launches Special Patrol in Taiwan Strait Amid Escalating Tensions Following US-Taiwan Meeting"
+                body="Previously published on overtoperator.com, migrated to Medium"
+            />
+        </ul>
+        <ul role="list" class="link-card-grid">
+            <Card
+                url="https://medium.com/@qepting91/dissecting-the-facts-preventing-school-violence-and-debunking-misconceptions-about-transgender-c61039c9966d"
+                image="/factcheck.png"
+                title="Dissecting the Facts: Preventing School Violence and Debunking Misconceptions About Transgender Shooters"
+                body="Previously published on overtoperator.com, migrated to Medium"
+            />
+        </ul>
+        <ul role="list" class="link-card-grid">
+            <Card
+                url="https://medium.com/@qepting91/rising-tides-of-influence-navigating-the-new-cold-war-between-china-and-the-united-states-048394040fef"
+                image="/chess.jpg"
+                title="Rising Tides of Influence: Navigating the New Cold War Between China and the United States"
+                body="Previously published on overtoperator.com, migrated to Medium"
+            />
+        </ul>
+        <ul role="list" class="link-card-grid">
+            <Card
+                url="https://medium.com/@qepting91/china-and-cuba-strengthen-bilateral-relations-why-it-matters-to-the-american-audience-8d418ea140ed"
+                image="/chinacuba.png"
+                title="China and Cuba Strengthen Bilateral Relations: Why It Matters to the American Audience"
+                body="Previously published on overtoperator.com, migrated to Medium"
+            />
+        </ul>
+        <ul role="list" class="link-card-grid">
+            <Card
+                url="https://medium.com/@qepting91/navigating-the-complex-regulatory-environment-the-impact-of-foreign-business-in-china-124ad0530c7c"
+                image="/business.png"
+                title="Navigating the Complex Regulatory Environment: The Impact of Foreign Business in China"
+                body="Previously published on overtoperator.com, migrated to Medium"
+            />
+        </ul>
+        <ul role="list" class="link-card-grid">
+            <Card
+                url="https://medium.com/@qepting91/the-invisible-hand-how-the-ccps-wechat-misinformation-campaigns-impact-american-consumers-7e5f71de0ccf"
+                image="/misinformation.png"
+                title="The Invisible Hand: How the CCP's WeChat Misinformation Campaigns Impact American Consumers"
+                body="Previously published on overtoperator.com, migrated to Medium"
+            />
+        </ul>
+        <ul role="list" class="link-card-grid">
+            <Card
+                url="https://medium.com/@qepting91/china-intensifies-border-control-and-exit-bans-f250c5b32686"
+                image="/china.png"
+                title="China Intensifies Border Control and Exit Bans"
+                body="Previously published on overtoperator.com, migrated to Medium"
+            />
+        </ul>
+        <ul role="list" class="link-card-grid">
+            <Card
+                url="https://medium.com/@qepting91/apt37-north-korean-state-sponsored-hackers-continue-to-target-multiple-industries-99ed70386325"
+                image="/apt37.png"
+                title="APT37: North Korean State-Sponsored Hackers Continue to Target Multiple Industries"
+                body="Previously published on overtoperator.com, migrated to Medium"
+            />
+        </ul>
+        <ul role="list" class="link-card-grid">
+            <Card
+                url="https://medium.com/@qepting91/the-role-of-ai-in-threat-intelligence-revolutionizing-cyber-security-519e66565795"
+                image="/ai.png"
+                title="The Role of AI in Threat Intelligence: Revolutionizing Cyber Security"
+                body="Previously published on overtoperator.com, migrated to Medium"
+            />
+        </ul>
+        <ul role="list" class="link-card-grid">
+            <Card
+                url="https://medium.com/@qepting91/uncovering-the-truth-how-ocr-technology-is-revolutionizing-osint-investigations-062a01538d66"
+                image="/ocr.png"
+                title="Uncovering the Truth: How OCR Technology is Revolutionizing OSINT Investigations"
+                body="Previously published on overtoperator.com, migrated to Medium"
+            />
+        </ul>
+        <ul role="list" class="link-card-grid">
+            <Card
+                url="https://medium.com/@qepting91/lazarus-group-uses-linkedin-to-launch-social-engineering-attacks-on-security-researchers-aff5f6f00769"
+                image="/lazarus.png"
+                title="Lazarus Group Uses LinkedIn to Launch Social Engineering Attacks on Security Researchers"
+                body="Previously published on overtoperator.com, migrated to Medium"
+            />
+        </ul>
+    </div>
+</Layout>
+<style>
+.articles-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjust number of columns as needed */
+    gap: 20px; /* Adjust the gap between cards as needed */
+    justify-content: center;
+    padding: 20px;
+}
+  
+.card-item {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content is spaced out */
+}
+    
+.card-item img {
+    width: 100%; /* Ensure the image fills the width of the .project-item */
+    height: auto; /* Adjust based on the aspect ratio of the image */
+    object-fit: cover; /* Image will scale to fit its container */
+    margin-bottom: 15px; /* Space between image and text content */
+}
+    
+@media (max-width: 768px) {
+    .articles-wrapper {
+        grid-template-columns: repeat(2, 1fr); /* Adjusts to a 2-column grid for smaller devices */
+    }
+}
+    
+@media (max-width: 480px) {
+    .articles-wrapper {
+        grid-template-columns: 1fr; /* Full width for very small screens */
+    }
+    .card-item {
+        width: auto; /* Allows the item to grow or shrink as needed */
+    }
+}
+</style>
