@@ -1,46 +1,48 @@
 ---
-// Import the Layout component
 import Layout from "../layouts/Layout.astro";
 
-// Define page title
 const pageTitle = "Resume";
 
-// Resume content structured for AstroJS
 const resume = {
   personalInfo: {
     name: "Quinten Epting",
   },
-  summary: `Seasoned technologist with a robust background in cybersecurity, law enforcement, military operations, and full-stack development. A continuous learner eager to solve complex problems and deliver outstanding results.`,
-  // Experiences Section
+  summary: `Equipped with over 7 years of investigative experience in various private sector industries, law enforcement, and military roles, I am deeply committed to safeguarding the vulnerable. My expertise, bolstered by a Master's in Criminal Justice/Forensic Psychology and proficiency in Python and data analysis.`,
+  technicalProficiencies: {
+    programming: ["Python", "JavaScript", "R (training)", "Go (training)"],
+    databases: ["MongoDB (NoSQL)", "CockroachDB (SQL)", "Supabase (NoSQL)"],
+  },
   experience: [
+    {
+      role: "Associate Intelligence Analyst",
+      company: "ZeroFox",
+      period: "March 2024 - Present",
+      tasks: [
+        "Utilize proprietary cybersecurity tools and databases to collect, monitor, and deliver physical security and information protection intelligence for federal clients.",
+        "Create and deliver technical training programs to 15+ analysts.",
+        "Created workflow automations using Python and Apps Script to assist in OSINT investigations",
+      ],
+    },
     {
       role: "Federal Staff Consultant",
       company: "A-lign",
-      period: "May 2023 - Present",
+      period: "May 2023 - March 2024",
       tasks: [
-        "Translate complex federal security compliance requirements for cloud implementations (GCP, AWS, Azure).",
-        "Conduct code review and documentation analysis for FedRAMP assessments identifying critical security gaps.",
-        "Facilitate knowledge-sharing and specialized training on federal security standards.",
+        "Served as a technical advisor for federal audits by translating complex security compliance guidelines into actionable client actions.",
+        "Facilitated knowledge-sharing and specialized training on federal security standards.",
+        "Responded to intricate compliance requests, offering thorough explanations and on-demand training while maintaining a customer-centric mindset.",
       ],
     },
     {
-      role: "OSINT Analyst/Developer",
-      company: "Overt Operator",
+      role: "Research Writer/OSINT Analyst",
+      company: "Overt Operator/Frontsight",
       period: "Jan 2023 - Present",
       tasks: [
-        "Developed internal web app for news article automation using Python, saving 160 hours/month.",
-        "Performed manual code reviews to ensure security best practices.",
         "Conduct in-depth OSINT research on geopolitical analysis, financial crimes, and risk assessments, employing advanced tools and techniques aligned with the investigation of illicit use of cryptocurrency when necessary.",
+        "Produce high-quality reports on OSINT findings, offering insights into emerging threats with cryptocurrency and contributing to collaboration with internal and external partners.",
         "Lead intelligence collection and social media intelligence (SOCMINT) efforts targeting domestic violent extremists (DVEs) and advanced persistent threats (APTs), identifying financial crime patterns and trends.",
-      ],
-    },
-    {
-      role: "Technical Service Technician",
-      company: "Patterson Dental",
-      period: "May 2021 - May 2023",
-      tasks: [
-        "Managed customer service ticketing system, improving troubleshooting process.",
-        "Initiated local network setups and provided technical maintenance.",
+        "Developed full stack applications, including a Generative AI Application as an OSINT Assistant using a vector database (Pinecone).",
+        "Automations developed within Pipedream saving an average of 40hrs a week.",
       ],
     },
     {
@@ -48,10 +50,9 @@ const resume = {
       company: "PwC",
       period: "January 2020 - May 2021",
       tasks: [
-        "Led tech initiatives using Alteryx, Tableau, and Python for process automation, saving 40 hours of billable time.",
-        "Conducted AML and MFI investigations using LexisNexis and OSINT tools.",
         "Conducted thorough Anti-Money Laundering (AML) and Mortgage Fraud Investigations (MFI), applying expert knowledge of Federal Regulations such as the Bank Secrecy Act, USA PATRIOT Acts, Financial Crimes Enforcement Network (FinCEN), and the Office of Foreign Assets Control (OFAC).",
-
+        "Specialized in detecting and preventing fraudulent mortgage activities, utilizing OSINT tools and techniques, and aligning with organizational cyber governance policies.",
+        "Demonstrated expertise in software such as Alteryx, Tableau, Google Suite, UiPath, and Python scripting language to effectively analyze large amounts of data, identify patterns/trends, and deliver professional results on internal and external projects.",
       ],
     },
     {
@@ -59,7 +60,7 @@ const resume = {
       company: "Nephron Pharmaceuticals",
       period: "March 2019 – October 2019",
       tasks: [
-        "Conducted research and investigations into compliance areas, applying Root Cause Analysis.",
+        "Conducted research and investigations into non-compliance areas, applying Root Cause Analysis and effective Corrective Action Plans to identify risks and ensure regulatory compliance, showcasing alignment with financial crimes investigation.",
         "Collaborated with cross-functional teams, driving policy and process improvements, and demonstrating expertise in risk mitigation and strategic thinking.",
       ],
     },
@@ -77,7 +78,8 @@ const resume = {
       company: "United States Army",
       period: "March 2013 – June 2015",
       tasks: [
-        "Secured crime scenes, processed evidence, provided site security during operations.",
+        "Secured crime scenes and processed evidence in a range of incidents, showcasing experience in law enforcement support, reconnaissance, and surveillance operations.",
+        "Provided site security during emergency and internment operations, aligning with financial crime prevention, risk mitigation techniques, and multi-jurisdictional investigation responsibilities.",
       ],
     },
   ],
@@ -93,17 +95,39 @@ const resume = {
       graduated: "2012",
     },
     {
+      degree: "Career Studies Certificate (C.S.C), Supervision/Business Administration",
+      institution: "Germanna Community College",
+    },
+    {
       degree: "Full-Stack Bootcamp",
       institution: "SavvyCoders",
-      skills:
-        "HTML, CSS, Javascript, Web APIs, MongoDB, Trello, Node.js/Express.js, UI/UX, Agile",
+      skills: "HTML, CSS, Javascript, MongoDB, Agile",
       graduated: "2024",
     },
   ],
   certifications: [
-    "ITIL v4 Foundation",
-    "Coursera DevOps on AWS Specialization",
-    "ICAgile Foundations",
+    "Cloud+ Certification | Comptia (Active)",
+    "Security+ Certification | Comptia (Expired April 2023)",
+    "ITIL V4 Certification | Axelos (IT Service Management Framework)",
+    "Jira Service Management: Administration",
+    "ICAgile Certified Professional",
+  ],
+  personalProjects: [
+    {
+      name: "RiskRadar",
+      technologies: "HTML, CSS, JavaScript, FullHunt API, MongoDB, Express.js",
+      description: "Custom built API utilized to scrape the CISA alerts to a NoSQL database",
+    },
+    {
+      name: "Domain Analysis",
+      technologies: "Python, Google Colab",
+      description: "Domain Analysis automation that combines multiple services into a PDF report",
+    },
+    {
+      name: "Ransomware Tracker",
+      technologies: "Streamlit, CockroachDB",
+      description: "Developed a Python-based site analyzing data from CockroachDB, created visualization dashboards for ransomware attacks",
+    },
   ],
 };
 ---
@@ -112,45 +136,65 @@ const resume = {
   <h1>{resume.personalInfo.name}'s Resume</h1>
   <p>{resume.summary}</p>
 
+  <h2>Technical Proficiencies</h2>
+  <div class="proficiencies">
+    <div class="proficiency-column">
+      <h3>Programming</h3>
+      <ul>
+        {resume.technicalProficiencies.programming.map((skill) => <li>{skill}</li>)}
+      </ul>
+    </div>
+    <div class="proficiency-column">
+      <h3>Databases</h3>
+      <ul>
+        {resume.technicalProficiencies.databases.map((db) => <li>{db}</li>)}
+      </ul>
+    </div>
+  </div>
+
   <h2>Professional Experience</h2>
   <ul>
-    {
-      resume.experience.map((item) => (
-        <li>
-          <h3>
-            {item.role} at {item.company}
-          </h3>
-          <p>{item.period}</p>
-          <ul>
-            {item.tasks.map((task) => (
-              <li>{task}</li>
-            ))}
-          </ul>
-        </li>
-      ))
-    }
+    {resume.experience.map((item) => (
+      <li>
+        <h3>{item.role} at {item.company}</h3>
+        <p>{item.period}</p>
+        <ul>
+          {item.tasks.map((task) => (
+            <li>{task}</li>
+          ))}
+        </ul>
+      </li>
+    ))}
   </ul>
 
   <h2>Education</h2>
   <ul>
-    {
-      resume.education.map((edu) => (
-        <li>
-          <h3>
-            {edu.degree}, {edu.institution}
-          </h3>
-          <p>Graduated: {edu.graduated}</p>
-          {edu.skills ? <p>Skills: {edu.skills}</p> : ""}
-        </li>
-      ))
-    }
+    {resume.education.map((edu) => (
+      <li>
+        <h3>{edu.degree}, {edu.institution}</h3>
+        {edu.graduated && <p>Graduated: {edu.graduated}</p>}
+        {edu.skills && <p>Skills: {edu.skills}</p>}
+      </li>
+    ))}
   </ul>
 
   <h2>Certifications</h2>
   <ul>
     {resume.certifications.map((certification) => <li>{certification}</li>)}
   </ul>
+
+  <h2>Personal Projects</h2>
+  <ul>
+    {resume.personalProjects.map((project) => (
+      <li>
+        <h3>{project.name}</h3>
+        <p>Technologies: {project.technologies}</p>
+        <p>{project.description}</p>
+      </li>
+    ))}
+  </ul>
 </Layout>
+
 <style>
   .container {
     max-width: 800px;
@@ -161,9 +205,7 @@ const resume = {
   }
 
   /* Typography */
-  h1,
-  h2,
-  h3 {
+  h1, h2, h3 {
     font-family: "Georgia", serif;
   }
 
@@ -174,7 +216,7 @@ const resume = {
 
   h2 {
     font-size: 18px;
-    color: #2a5078; /* Dark blue for better visual hierarchy */
+    color: #2a5078;
     margin-top: 1em;
     margin-bottom: 0.5em;
   }
@@ -225,8 +267,7 @@ const resume = {
   }
 
   /* Skills & Keywords */
-  .skill,
-  .keyword {
+  .skill, .keyword {
     background-color: #e8f0fe;
     color: #333;
     padding: 2px 4px;
@@ -251,9 +292,17 @@ const resume = {
       font-size: 20px;
     }
 
-    h3,
-    .section-heading {
+    h3, .section-heading {
       font-size: 18px;
     }
+  }
+
+  /* Technical Proficiencies */
+  .proficiencies {
+    display: flex;
+    justify-content: space-between;
+  }
+  .proficiency-column {
+    width: 48%;
   }
 </style>
