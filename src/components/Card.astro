@@ -5,64 +5,245 @@ interface Props {
     title: string;
     body: string;
     className?: string;
+    stack?: string;
+    github?: string;
+    website?: string;
 }
 
-const { url, image, title, body, className } = Astro.props;
+const { url, image, title, body, className, stack, github, website } = Astro.props;
+
+type ObjectFitType = 'cover' | 'contain';
+
+interface ImageConfig {
+    aspectRatio: string;
+    objectFit: ObjectFitType;
+    padding: string;
+    maxHeight: string;
+}
+
+const getImageConfig = (imageUrl: string): ImageConfig => {
+    const config: ImageConfig = {
+        aspectRatio: '56.25%',
+        objectFit: 'contain',
+        padding: '0',
+        maxHeight: '300px'
+    };
+
+    if (imageUrl.includes('logo')) {
+        config.padding = '2rem';
+    }
+
+    return config;
+};
+
+const imageConfig = getImageConfig(image);
 ---
-<div class={`link-card ${className ?? ''}`}> <!-- Use a div and apply the className -->
-    <a href={url}>
-        <div class="img">
-            <img width="226" height="127" src={image} class="card-img" alt="ProjectImage">
+
+<article class={`project-card ${className || ''}`}>
+    <a href={url} class="card-link">
+        <div class="card-image-wrapper">
+            <div class="card-image-container">
+                <picture class="image-picture">
+                    {!image.endsWith('.png') && (
+                        <source 
+                            srcset={image.replace(/\.(jpg|jpeg)$/, '.webp')} 
+                            type="image/webp"
+                        />
+                    )}
+                    <img 
+                        src={image}
+                        alt={`${title} preview`}
+                        width="800"
+                        height="450"
+                        loading="lazy"
+                        decoding="async"
+                        class="card-image"
+                    />
+                </picture>
+            </div>
+            <div class="card-overlay">
+                <div class="card-actions">
+                    {website && (
+                        <a href={website} class="action-button" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                            Live Demo
+                        </a>
+                    )}
+                    {github && (
+                        <a href={github} class="action-button" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                            View Code
+                        </a>
+                    )}
+                </div>
+            </div>
         </div>
-	<h3 class="card-title">
-	    {title}
-	</h3>
-	<p class="card-txt">
-	    {body}
-        </p>
+
+        <div class="card-content">
+            <h3 class="card-title">{title}</h3>
+            <p class="card-description">{body}</p>
+            {stack && (
+                <div class="tech-stack">
+                    {stack.split(',').map((tech) => (
+                        <span class="tech-badge">{tech.trim()}</span>
+                    ))}
+                </div>
+            )}
+        </div>
     </a>
-</div>
+</article>
+
 <style>
-    .link-card {
-        list-style: none;
-        display: flex;
-        background-size: 400%;
-        padding: 20px;
-    }
-
-    .link-card > a {
-        width: 100%;
-        text-decoration: none;
-        line-height: 1.4;
-        border-radius: 8px;
-        color: #fdebf3;
-    }
-
-    .img {
-        text-align: center;
-    }
-
-    img {
+    .project-card {
+        background: var(--card-bg, #ffffff);
         border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
     }
 
-    h3 {
-        margin: 0;
-        font-family: 'Josefin Sans', sans-serif;
+    .card-link {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-image-wrapper {
+        position: relative;
+        width: 100%;
+        background: #030303;
+        height: 225px;
+    }
+
+    .card-image-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .image-picture {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card-image {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .card-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .project-card:hover .card-overlay {
+        opacity: 1;
+    }
+
+    .card-actions {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .action-button {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.25rem;
+        background: #78c2ad;
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background 0.2s ease;
+    }
+
+    .action-button:hover {
+        background: #5fa994;
+    }
+
+    .card-content {
+        padding: 1.5rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-title {
         font-size: 1.5rem;
-        font-weight: normal;
-        text-align: center;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        color: #030303;
+        font-family: 'Josefin Sans', sans-serif;
     }
 
-    p {
-        font-size: 1em;
-        line-height: 1.5;
-        text-indent: 0;
-        text-align: center;
-        margin: 0.5rem 0 0;
+    .card-description {
+        color: #333;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
     }
 
-    .link-card:hover {
-        transform: scale(1.05);
+    .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: auto;
+    }
+
+    .tech-badge {
+        padding: 0.3em 0.6em;
+        background: var(--badge-bg, #f0f0f0);
+        color: var(--badge-text, #333);
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+        .card-actions {
+            flex-direction: column;
+        }
+
+        .action-button {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .project-card,
+        .card-image,
+        .card-overlay {
+            transition: none;
+        }
     }
 </style>

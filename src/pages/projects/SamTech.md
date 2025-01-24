@@ -3,8 +3,8 @@ layout: ../../layouts/MarkdownWorksLayout.astro
 title: 'Sam Tech: Future Automated'
 description: 'Custom Content blog and guide site highlighting the use of Generative AI and Automation'
 image:
-    url: '/logo.png'
-    alt: 'RiskRadar'
+    url: '\sam_tech.webp'
+    alt: 'SamTech'
 platform: Web
 stack: HTML, CSS, Javascript, AstroJS, Netlify, Pipedream
 website: https://samtechautomated.com/

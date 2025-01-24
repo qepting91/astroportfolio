@@ -2,26 +2,42 @@
 import Layout from '../layouts/Layout.astro';
 const pageTitle = "Portfolio";
 ---
+
 <Layout pageTitle={pageTitle}>
     <div class="gif">
         <img width="300" height="259" alt="TechGif" src="/techgif.webp"/>
     </div>
+
     <h1>Welcome</h1>
-    <small>Quinten Epting (Developer)</small>
+    <small>Quinten Epting (Developer & Cybersecurity Enthusiast)</small>
+
     <h2>About</h2>
     <p>
-        I'm Quinten Epting, a seasoned technologist with a passion for solving complex problems 
-        through innovative technology solutions. With a rich background in cybersecurity, law enforcement, 
-        and military operations, I leverage my diverse experiences to bring a unique perspective to software engineering. 
-        My expertise spans full-stack development, cloud technologies, and compliance standards, making me a dynamic asset 
-        in any tech environment. As a continuous learner, I'm always eager to tackle new challenges and am committed to delivering 
-        outstanding results.
+        I’m Quinten Epting—a full-stack developer and cybersecurity specialist with a passion for
+        securing digital landscapes while driving innovation. My background in law enforcement, military operations, 
+        and forensic psychology offers a unique perspective on building technology solutions that protect 
+        sensitive information and empower users. 
     </p>
+    <p>
+        Whether I'm designing <strong>secure cloud architectures</strong>, implementing full-stack 
+        applications with frameworks like React and Node.js, or analyzing threat intelligence, 
+        I thrive on solving complex challenges in the tech space. I'm a dedicated lifelong learner, 
+        constantly refining my <strong>cyber threat analysis</strong> and <strong>secure coding</strong> 
+        practices to stay at the forefront of an ever-evolving industry. 
+    </p>
+    <p>
+        My goal is simple: to create robust, user-friendly software that not only meets modern demands 
+        but also anticipates tomorrow’s threats. Thank you for visiting my portfolio—I invite you to explore 
+        my projects below to see how my passion for technology and security can bring 
+        value to your organization or next big idea.
+    </p>
+
     <div class="button">
         <a href="/projects/">
             <button class="button">My Projects</button>
         </a>
     </div>
+
     <h2>Skills</h2>
     <div class="link-images">
         <img width="46" height="46" alt="Python" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"/>
@@ -32,16 +48,25 @@ const pageTitle = "Portfolio";
         <img width="46" height="46" alt="CSS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg"/>
         <img width="46" height="46" alt="HTML" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg"/>
         <img width="46" height="46" alt="JavaScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg"/>
-        <img width="46" height="46" alt="git" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"/>
+        <img width="46" height="46" alt="Git" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"/>
+        <img width="46" height="46" alt="Go" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg"/>
+        <img width="46" height="46" alt="Kubernetes" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg"/>
+        <img width="46" height="46" alt="Docker" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"/>
+        <img width="46" height="46" alt="AWS" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg"/>
     </div>
+
     <h2>Interests</h2>
     <p>
-        Beyond my professional life, I'm deeply fascinated by all areas of technology, from automation and development to cybersecurity. My enthusiasm doesn't stop there; 
-        I'm a big fan of Star Wars and Power Rangers, blending my love for epic narratives with my tech interests. Outside the digital world, I enjoy coaching my son's T-ball team, 
-        an experience that enriches my life with community spirit and teamwork. These diverse interests reflect my belief in the importance of balance—embracing both high-tech pursuits 
-        and the simple joys of family time and fandom.
+        Outside of work, I stay inspired by exploring the frontiers of automation, AI-driven cybersecurity, 
+        and open-source development communities. I'm also a proud <strong>Star Wars</strong> 
+        and <strong>Power Rangers</strong> fan—two universes that remind me to always keep a spark of curiosity 
+        and adventure alive. When I’m not immersed in tech, you’ll find me coaching my son’s T-ball team, 
+        an experience that enriches my life with camaraderie, teamwork, and the joy of guiding young minds. 
+        I believe in a balanced approach to life: chasing innovation, maintaining strong community ties, 
+        and embracing the fun side of geek culture.
     </p>
 </Layout>
+
 <style>
     /* small */
     small {
@@ -53,6 +78,7 @@ const pageTitle = "Portfolio";
         font-family: 'Josefin Sans', sans-serif;
         font-weight: 600;
         padding: 0.3em 0.6em 0.2em;
+        margin-bottom: 1rem;
     }
 
     /* Button */
