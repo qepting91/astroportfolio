@@ -9,32 +9,32 @@ const pageTitle = "Portfolio";
     </div>
 
     <h1>Welcome</h1>
-    <small>Quinten Epting (Developer & Cybersecurity Enthusiast)</small>
+    <div class="role-badge">
+        <small>Quinten Epting | Security Engineer & Developer</small>
+    </div>
 
     <h2>About</h2>
     <p>
-        I’m Quinten Epting—a full-stack developer and cybersecurity specialist with a passion for
-        securing digital landscapes while driving innovation. My background in law enforcement, military operations, 
-        and forensic psychology offers a unique perspective on building technology solutions that protect 
-        sensitive information and empower users. 
+        I’m Quinten Epting, a <strong>Security Engineer</strong> at Pellera Technologies. My path to tech wasn't linear. 
+        Before I was writing code, I spent years in <strong>Law Enforcement</strong> and the <strong>Military</strong>. 
+        That operational experience gave me a distinct perspective on security—I know how adversaries think 
+        because I’ve tracked them in the real world.
     </p>
     <p>
-        Whether I'm designing <strong>secure cloud architectures</strong>, implementing full-stack 
-        applications with frameworks like React and Node.js, or analyzing threat intelligence, 
-        I thrive on solving complex challenges in the tech space. I'm a dedicated lifelong learner, 
-        constantly refining my <strong>cyber threat analysis</strong> and <strong>secure coding</strong> 
-        practices to stay at the forefront of an ever-evolving industry. 
+        I bridge the gap between traditional security operations and modern software engineering. 
+        I don't just manage vulnerabilities; I build <strong>automation tools</strong> using Python and Go 
+        to eliminate manual grunt work. Whether it's orchestrating <strong>Tenable</strong> workflows or 
+        developing custom OSINT applications, I focus on building security solutions that are fast, 
+        efficient, and actually work for the people using them.
     </p>
     <p>
-        My goal is simple: to create robust, user-friendly software that not only meets modern demands 
-        but also anticipates tomorrow’s threats. Thank you for visiting my portfolio—I invite you to explore 
-        my projects below to see how my passion for technology and security can bring 
-        value to your organization or next big idea.
+        I am currently focused on <strong>Vulnerability Management</strong> and <strong>Threat Intelligence</strong>, 
+        combining my analytical background with full-stack development to anticipate tomorrow's threats.
     </p>
 
-    <div class="button">
+    <div class="button-wrapper">
         <a href="/projects/">
-            <button class="button">My Projects</button>
+            <button>My Projects</button>
         </a>
     </div>
 
@@ -57,69 +57,141 @@ const pageTitle = "Portfolio";
 
     <h2>Interests</h2>
     <p>
-        Outside of work, I stay inspired by exploring the frontiers of automation, AI-driven cybersecurity, 
-        and open-source development communities. I'm also a proud <strong>Star Wars</strong> 
-        and <strong>Power Rangers</strong> fan—two universes that remind me to always keep a spark of curiosity 
-        and adventure alive. When I’m not immersed in tech, you’ll find me coaching my son’s T-ball team, 
-        an experience that enriches my life with camaraderie, teamwork, and the joy of guiding young minds. 
-        I believe in a balanced approach to life: chasing innovation, maintaining strong community ties, 
-        and embracing the fun side of geek culture.
+        When I step away from the keyboard, I'm usually in "dad mode." You can find me coaching my son’s T-ball team 
+        or hanging out with my family. I’m also a massive fan of <strong>Star Wars</strong> and <strong>Power Rangers</strong>—universes 
+        that keep my imagination active. I believe you have to keep a sense of fun and curiosity, 
+        whether you're analyzing a firewall log or debating the best Ranger generation.
     </p>
 </Layout>
 
 <style>
-    /* small */
+    /* --- Global Width Override (Matches Resume) --- */
+    :global(body) {
+        width: 80% !important;
+        max-width: 1600px;
+    }
+
+    /* --- Typography Overrides (Matches Resume) --- */
+    h1, h2 {
+        font-family: "Georgia", serif !important; /* Overrides Pacifico */
+    }
+
+    p {
+        font-family: "Calibri", "Helvetica", sans-serif;
+        font-size: 1.15rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    /* --- Headings --- */
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+        color: #fdebf3;
+    }
+
+    h2 {
+        font-size: 2rem;
+        text-decoration: none; /* Remove default underline */
+        border-bottom: 2px solid #78c2ad;
+        padding-bottom: 5px;
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: #fdebf3;
+    }
+
+    /* --- Light Mode Headings --- */
+    :global(.light) h1 {
+        color: #1e1e2e;
+    }
+
+    :global(.light) h2 {
+        color: #2a5078;
+        border-bottom-color: #2a5078;
+    }
+
+    :global(.light) p {
+        color: #1e1e2e;
+    }
+
+    /* --- Role Badge (Small) --- */
+    .role-badge {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
     small {
-        display: grid;
-        place-items: center;
         background-color: #584966;
         color: #fdebf3;
         border-radius: 6px;
         font-family: 'Josefin Sans', sans-serif;
         font-weight: 600;
-        padding: 0.3em 0.6em 0.2em;
-        margin-bottom: 1rem;
+        font-size: 1rem;
+        padding: 0.4em 0.8em;
     }
 
-    /* Button */
+    /* --- Button Styling --- */
+    .button-wrapper {
+        text-align: center;
+        margin: 2rem 0;
+    }
+
     button {
-        background: rgba(0,0,0,0);
+        background: transparent;
         border: 2px solid #78c2ad;
         border-radius: 8px;
-        color: #999597;
-        font: 600 16px 'Josefin Sans', sans-serif;
-        padding: 8px 16px;
-        transition: background-color 0.4s, color 0.4s;
+        color: #fdebf3;
+        font-family: "Georgia", serif;
+        font-weight: bold;
+        font-size: 1.1rem;
+        padding: 10px 24px;
+        transition: all 0.3s ease;
+        cursor: pointer;
     }
 
     button:hover {
         background-color: #78c2ad;
         color: #1e1e2e;
-        cursor: pointer;
     }
 
-    .button {
-        text-align: center;
+    /* Light Mode Button */
+    :global(.light) button {
+        border-color: #2a5078;
+        color: #2a5078;
     }
 
-    /* Skill images */
+    :global(.light) button:hover {
+        background-color: #2a5078;
+        color: #fff;
+    }
+
+    /* --- Skills Images --- */
     .link-images {
         display: flex; 
         flex-wrap: wrap; 
         justify-content: center; 
         align-items: center; 
-        gap: 10px;
+        gap: 15px;
+        margin-bottom: 2rem;
     }
+    
     .link-images img {
-        margin: 8px;
+        transition: transform 0.2s;
     }
 
+    .link-images img:hover {
+        transform: scale(1.1);
+    }
+
+    /* --- Mobile --- */
     @media only screen and (max-width: 600px) {
+        h1 { font-size: 2.2rem; }
+        h2 { font-size: 1.6rem; }
+        
         .link-images img {
-            height: 30px;
-            width: 30px;
-            margin: 16px 1px;
-            align-items: center;
+            height: 35px;
+            width: 35px;
         }
     }
 </style>

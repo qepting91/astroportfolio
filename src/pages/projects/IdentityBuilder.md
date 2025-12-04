@@ -6,7 +6,7 @@ image:
     url: '/identity.webp'
     alt: 'Identity Builder'
 platform: Web
-stack: CSS, HTML
+stack: CSS, HTML, Python
 github: https://github.com/qepting91/identitybuilder
 ---
 

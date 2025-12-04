@@ -10,4 +10,4 @@ stack: Jupyter Notebook, Python
 github: https://github.com/qepting91/maigret_fuzzer
 ---
 
-A testing suite/notebook for the Maigret OSINT username checker, likely used to automate username lookups or stress-test the tool.
+A Jupyter notebook-based tool for automated username fuzzing and OSINT using Maigret. The output script then filters by http status code, to help maximize the number of true positives.

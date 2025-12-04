@@ -4,305 +4,532 @@ import Layout from "../layouts/Layout.astro";
 const pageTitle = "Resume";
 
 const resume = {
-  personalInfo: {
+  basics: {
     name: "Quinten Epting",
+    summary: "Security Engineer leveraging a background in law enforcement and military operations to design automated threat detection systems. Specializes in Vulnerability Management, OSINT, and CI/CD pipeline development. Technical proficiency includes Python, Go (Golang), PowerShell, and Tenable.sc. Successfully deployed Tenable ASM across 12 public sector entities and developed custom scripts to integrate the Tenable API into security workflows. Certified Tenable Vulnerability Management Specialist and CompTIA Cloud+ holder.",
+    profiles: [
+      {
+        network: "LinkedIn",
+        username: "qepting",
+        url: "https://www.linkedin.com/in/qepting"
+      },
+      {
+        network: "GitHub",
+        username: "qepting91",
+        url: "https://github.com/qepting91"
+      }
+    ]
   },
-  summary: `Equipped with over 7 years of investigative experience in various private sector industries, law enforcement, and military roles, I am deeply committed to safeguarding the vulnerable. My expertise, bolstered by a Master's in Criminal Justice/Forensic Psychology and proficiency in Python and data analysis.`,
-  technicalProficiencies: {
-    programming: ["Python", "JavaScript", "R (training)", "Go (training)"],
-    databases: ["MongoDB (NoSQL)", "CockroachDB (SQL)", "Supabase (NoSQL)"],
-  },
-  experience: [
+  work: [
     {
-      role: "Associate Intelligence Analyst",
-      company: "ZeroFox",
-      period: "March 2024 - Present",
-      tasks: [
-        "Utilize proprietary cybersecurity tools and databases to collect, monitor, and deliver physical security and information protection intelligence for federal clients.",
-        "Create and deliver technical training programs to 15+ analysts.",
-        "Created workflow automations using Python and Apps Script to assist in OSINT investigations",
-      ],
+      name: "Pellera Technologies",
+      position: "Security Engineer",
+      startDate: "2025",
+      endDate: "Present",
+      highlights: [
+        "Manage the end-to-end vulnerability management program for a key client, ensuring continuous security compliance through the diligent maintenance of Tenable.sc scans, audit files, and credentials.",
+        "Built PowerShell scripts to integrate the Tenable API into operational workflows, automating data retrieval and streamlining scanning processes.",
+        "Deployed Tenable Attack Surface Management (ASM) across 12 public sector entities, successfully expanding security visibility and enhancing proactive threat detection capabilities.",
+        "Developed and delivered targeted security product training for clients, empowering teams to effectively utilize tools and improve overall security awareness."
+      ]
     },
     {
-      role: "Federal Staff Consultant",
-      company: "A-lign",
-      period: "May 2023 - March 2024",
-      tasks: [
-        "Served as a technical advisor for federal audits by translating complex security compliance guidelines into actionable client actions.",
-        "Facilitated knowledge-sharing and specialized training on federal security standards.",
-        "Responded to intricate compliance requests, offering thorough explanations and on-demand training while maintaining a customer-centric mindset.",
-      ],
+      name: "ZeroFox",
+      position: "Cyber Threat Intelligence Analyst",
+      startDate: "2024",
+      endDate: "2025",
+      highlights: [
+        "Served as the primary analyst for a major public sector client, contributing to intelligence requests for multiple agencies under contracts totaling $2M.",
+        "Automated investigations using Python, Go, UrlScan, and VirusTotal, reducing manual workflows by 50% and saving an estimated $15K per analyst per year.",
+        "Integrated Maigret automation into OSINT workflows, improving investigation speed by 90%, cutting manual correlation efforts, and enhancing the overall intelligence cycle.",
+        "Performed manual threat hunting to identify emerging threats and profiled threat actors by mapping TTPs to the MITRE ATT&CK framework."
+      ]
     },
     {
-      role: "Developer",
-      company: "Frontsight",
-      period: "Jan 2023 - Present",
-      tasks: [
-          "Led a development team to create an automated web app for internal news article generation, saving 160 hours/month by automating tasks with Python.",
-          "Developed two full stack web apps in Next.js, one of which is a custom OSINT Assistant chatbot, leveraging a vector database. The second is also a custom chatbot, leveraging a Graph database.",
-          "Conducted OSINT research focused on geopolitical threats, financial crimes, and terrorism, leveraging advanced tools to gather and analyze data from open sources, deep web, and dark web.",
-          "Developed versioning and documentation guidelines for internal projects, using Notion as a knowledge management system to streamline team workflows.",
-          "Automations developed within Pipedream saving an average of 40hrs a week, integrating OpenAI prompts, tailored to mission objectives."
-      ],
+      name: "Frontsight (formerly Overt Operator)",
+      position: "DevOps Engineer & OSINT Analyst (Contract)",
+      startDate: "2023",
+      endDate: "2025",
+      highlights: [
+        "Developed two full-stack web applications in Next.js, providing analysts with AI-driven chatbot assistants that doubled investigation throughput and increased yearly revenue by over $80K.",
+        "Led a development team to create a custom web app for internal news article automation using Python, saving 160 hours/month of production time.",
+        "Built CI/CD pipelines and managed code changes using Git to support internal threat detection tools.",
+        "Researched and authored public-facing intelligence articles on geopolitical conflict and state-sponsored threat actors (including APT37 and Lazarus Group)."
+      ]
     },
     {
-      role: "Risk Security Analyst",
-      company: "PwC",
-      period: "January 2020 - May 2021",
-      tasks: [
-        "Conducted thorough Anti-Money Laundering (AML) and Mortgage Fraud Investigations (MFI), applying expert knowledge of Federal Regulations such as the Bank Secrecy Act, USA PATRIOT Acts, Financial Crimes Enforcement Network (FinCEN), and the Office of Foreign Assets Control (OFAC).",
-        "Specialized in detecting and preventing fraudulent mortgage activities, utilizing OSINT tools and techniques, and aligning with organizational cyber governance policies.",
-        "Demonstrated expertise in software such as Alteryx, Tableau, Google Suite, UiPath, and Python scripting language to effectively analyze large amounts of data, identify patterns/trends, and deliver professional results on internal and external projects.",
-      ],
+      name: "MUO (MakeUseOf)",
+      position: "Contributor",
+      startDate: "2024",
+      endDate: "2025",
+      highlights: [
+        "Authored articles on technology topics with an emphasis on Artificial Intelligence and Security, translating complex technical concepts for a broad audience."
+      ]
     },
     {
-      role: "Pharmaceuticals Investigator",
-      company: "Nephron Pharmaceuticals",
-      period: "March 2019 – October 2019",
-      tasks: [
-        "Conducted research and investigations into non-compliance areas, applying Root Cause Analysis and effective Corrective Action Plans to identify risks and ensure regulatory compliance, showcasing alignment with financial crimes investigation.",
-        "Collaborated with cross-functional teams, driving policy and process improvements, and demonstrating expertise in risk mitigation and strategic thinking.",
-      ],
+      name: "A-LIGN",
+      position: "Federal Staff Consultant",
+      startDate: "2023",
+      endDate: "2024",
+      highlights: [
+        "Advised on FedRAMP, StateRAMP, and FISMA compliance for cloud environments (AWS, Azure, GCP), ensuring security configurations met federal authorization requirements.",
+        "Conducted vulnerability assessments and risk analysis, interpreting cloud security scans to provide actionable threat mitigation strategies for projects exceeding $500K."
+      ]
     },
     {
-      role: "Police Officer",
-      company: "Batesburg-Leesville Police Department",
-      period: "January 2018 – March 2019",
-      tasks: [
-        "Led the creation of the gang intelligence task force as Criminal Intelligence Analyst, conducting HUMINT, SOCMINT, and geolocation analyses on active gangs, closely aligned with trans-national organized crime investigation.",
-        "Produced detailed incident reports and legal documents, showcasing excellent communication skills and ability to work closely with law enforcement and other agencies.",
-      ],
+      name: "PwC",
+      position: "Risk Security Analyst",
+      startDate: "2020",
+      endDate: "2021",
+      highlights: [
+        "Conducted AML and fraud investigations using OSINT techniques to map criminal networks.",
+        "Used Alteryx and Python to automate data analysis, reducing manual processing by 40 hours/month."
+      ]
     },
     {
-      role: "Military Police",
-      company: "United States Army",
-      period: "March 2013 – June 2015",
-      tasks: [
-        "Secured crime scenes and processed evidence in a range of incidents, showcasing experience in law enforcement support, reconnaissance, and surveillance operations.",
-        "Provided site security during emergency and internment operations, aligning with financial crime prevention, risk mitigation techniques, and multi-jurisdictional investigation responsibilities.",
-      ],
+      name: "Batesburg-Leesville Police Dept",
+      position: "Police Officer",
+      startDate: "2018",
+      endDate: "2019",
+      highlights: [
+        "Led criminal investigations and gang intelligence operations."
+      ]
     },
+    {
+      name: "US Army",
+      position: "Military Police",
+      startDate: "2013",
+      endDate: "2015",
+      highlights: [
+        "Conducted intelligence gathering and threat assessments in high-risk environments."
+      ]
+    }
   ],
-  education: [
-    {
-      degree: "M.S. Criminal Justice/Forensic Psychology",
-      institution: "Liberty University",
-      graduated: "2019",
-    },
-    {
-      degree: "B.A. Criminology",
-      institution: "University of South Carolina",
-      graduated: "2012",
-    },
-    {
-      degree: "Career Studies Certificate (C.S.C), Supervision/Business Administration",
-      institution: "Germanna Community College",
-    },
-    {
-      degree: "Full-Stack Bootcamp",
-      institution: "SavvyCoders",
-      skills: "HTML, CSS, Javascript, MongoDB, Agile",
-      graduated: "2024",
-    },
-  ],
-  certifications: [
-    "Cloud+ Certification | Comptia (Active)",
-    "Security+ Certification | Comptia (Expired April 2023)",
-    "ITIL V4 Certification | Axelos (IT Service Management Framework)",
-    "Jira Service Management: Administration",
-    "ICAgile Certified Professional",
-  ],
-  personalProjects: [
+  projects: [
     {
       name: "RiskRadar",
-      technologies: "HTML, CSS, JavaScript, FullHunt API, MongoDB, Express.js",
-      description: "Custom built API utilized to scrape the CISA alerts to a NoSQL database",
-    },
-    {
-      name: "Domain Analysis",
-      technologies: "Python, Google Colab",
-      description: "Domain Analysis automation that combines multiple services into a PDF report",
+      description: "Built a REST API that scrapes CISA alerts, integrates the data into a NoSQL database, and visualizes threat data for continuous monitoring.",
+      keywords: ["JavaScript", "MongoDB", "REST API", "CI/CD"]
     },
     {
       name: "Ransomware Tracker",
-      technologies: "Streamlit, CockroachDB",
-      description: "Developed a Python-based site analyzing data from CockroachDB, created visualization dashboards for ransomware attacks",
+      description: "Developed a Python-based tool that ingests ransomware data to create real-time dashboards for monitoring attack patterns and activity.",
+      keywords: ["Python", "Streamlit"]
     },
+    {
+      name: "gomain_analysis",
+      description: "Created an OSINT tool utilizing GeoIP2, WHOIS, DNS resolution, and the Wayback Machine for automated domain investigation.",
+      keywords: ["Go", "Golang", "Docker", "AWS"]
+    },
+    {
+      name: "Sam Tech: Future Automated",
+      description: "Designed a technical blog and portfolio site focused on automation and security, built with a modern CI/CD pipeline.",
+      keywords: ["AstroJS", "Netlify", "GitHub", "Snyk"]
+    }
   ],
+  education: [
+    {
+      institution: "Liberty University",
+      area: "Criminal Justice / Forensic Psychology",
+      studyType: "Master of Science (M.S.)",
+      startDate: "2014",
+      endDate: "2018"
+    },
+    {
+      institution: "University of South Carolina",
+      area: "Criminology",
+      studyType: "Bachelor of Arts (B.A.)",
+      startDate: "2009",
+      endDate: "2012"
+    },
+    {
+      institution: "SavvyCoders",
+      area: "Full Stack Development",
+      studyType: "Bootcamp Certificate",
+      endDate: "2022"
+    }
+  ],
+  certifications: [
+    {
+      name: "Tenable Vulnerability Management Specialist",
+      date: "2025",
+      issuer: "Tenable"
+    },
+    {
+      name: "Cloud+",
+      issuer: "CompTIA",
+      status: "Active"
+    },
+    {
+      name: "Security+",
+      issuer: "CompTIA",
+      status: "Expired"
+    }
+  ],
+  skills: [
+    {
+      name: "Programming Languages",
+      keywords: ["Python", "Go (Golang)", "PowerShell", "JavaScript (Next.js, Node.js)", "HTML/CSS", "SQL"]
+    },
+    {
+      name: "Security Tools",
+      keywords: ["Tenable.sc", "Tenable ASM", "Splunk", "ZeroFox Platform", "UrlScan", "VirusTotal", "Maigret", "Burp Suite", "Metasploit", "Wireshark"]
+    },
+    {
+      name: "DevOps & Cloud",
+      keywords: ["Docker", "Kubernetes", "AWS", "Azure", "Git", "GitHub", "CI/CD Pipelines"]
+    },
+    {
+      name: "Automation & Analysis",
+      keywords: ["Pipedream", "OpenAI API", "Alteryx", "Zapier", "Maltego", "Regular Expressions (Regex)", "MITRE ATT&CK"]
+    }
+  ]
 };
 ---
 
 <Layout pageTitle={pageTitle}>
-  <h1>{resume.personalInfo.name}'s Resume</h1>
-  <p>{resume.summary}</p>
+  <div class="resume-wrapper">
+    <div class="resume-header">
+      <h1>{resume.basics.name}</h1>
+      
+      <div class="profiles">
+        {resume.basics.profiles.map(profile => (
+          <a href={profile.url} target="_blank" class="profile-link">{profile.network}</a>
+        ))}
+      </div>
+    </div>
 
-  <h2>Technical Proficiencies</h2>
-  <div class="proficiencies">
-    <div class="proficiency-column">
-      <h3>Programming</h3>
-      <ul>
-        {resume.technicalProficiencies.programming.map((skill) => <li>{skill}</li>)}
-      </ul>
+    <p class="summary">{resume.basics.summary}</p>
+
+    <h2>Technical Proficiencies</h2>
+    <div class="skills-grid">
+      {resume.skills.map((skillGroup) => (
+        <div class="skill-category">
+          <h3>{skillGroup.name}</h3>
+          <ul>
+            {skillGroup.keywords.map((keyword) => <li>{keyword}</li>)}
+          </ul>
+        </div>
+      ))}
     </div>
-    <div class="proficiency-column">
-      <h3>Databases</h3>
-      <ul>
-        {resume.technicalProficiencies.databases.map((db) => <li>{db}</li>)}
-      </ul>
+
+    <h2>Professional Experience</h2>
+    <div class="experience-list">
+      {resume.work.map((job) => (
+        <div class="job-entry">
+          <div class="job-header">
+              <h3>{job.position} <span class="at">at</span> {job.name}</h3>
+              <span class="date-badge">{job.startDate} - {job.endDate}</span>
+          </div>
+          <ul class="job-highlights">
+            {job.highlights.map((highlight) => (
+              <li>{highlight}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
+
+    <h2>Projects</h2>
+    <div class="projects-list">
+      {resume.projects.map((project) => (
+        <div class="project-entry">
+          <div class="project-header">
+              <h3>{project.name}</h3>
+              <div class="tech-tags">
+                  {project.keywords.map(tag => <span class="tag">{tag}</span>)}
+              </div>
+          </div>
+          <p>{project.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <h2>Education</h2>
+    <ul class="education-list">
+      {resume.education.map((edu) => (
+        <li>
+          <div class="edu-header">
+              <h3>{edu.institution}</h3>
+              <span class="date">{edu.startDate ? `${edu.startDate} - ` : ''}{edu.endDate}</span>
+          </div>
+          <p class="degree">{edu.studyType} in {edu.area}</p>
+        </li>
+      ))}
+    </ul>
+
+    <h2>Certifications</h2>
+    <ul class="cert-list">
+      {resume.certifications.map((cert) => (
+        <li>
+          <strong>{cert.name}</strong> | {cert.issuer} 
+          {cert.status && <span class="cert-status">({cert.status})</span>}
+          {cert.date && <span class="cert-date">({cert.date})</span>}
+        </li>
+      ))}
+    </ul>
   </div>
-
-  <h2>Professional Experience</h2>
-  <ul>
-    {resume.experience.map((item) => (
-      <li>
-        <h3>{item.role} at {item.company}</h3>
-        <p>{item.period}</p>
-        <ul>
-          {item.tasks.map((task) => (
-            <li>{task}</li>
-          ))}
-        </ul>
-      </li>
-    ))}
-  </ul>
-
-  <h2>Education</h2>
-  <ul>
-    {resume.education.map((edu) => (
-      <li>
-        <h3>{edu.degree}, {edu.institution}</h3>
-        {edu.graduated && <p>Graduated: {edu.graduated}</p>}
-        {edu.skills && <p>Skills: {edu.skills}</p>}
-      </li>
-    ))}
-  </ul>
-
-  <h2>Certifications</h2>
-  <ul>
-    {resume.certifications.map((certification) => <li>{certification}</li>)}
-  </ul>
-
-  <h2>Personal Projects</h2>
-  <ul>
-    {resume.personalProjects.map((project) => (
-      <li>
-        <h3>{project.name}</h3>
-        <p>Technologies: {project.technologies}</p>
-        <p>{project.description}</p>
-      </li>
-    ))}
-  </ul>
 </Layout>
 
 <style>
-  .container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* --- Global Override for Width --- */
+  :global(body) {
+      width: 80% !important; /* Force 80% width on this page */
+      max-width: 1600px;
   }
 
-  /* Typography */
-  h1, h2, h3 {
-    font-family: "Georgia", serif;
+  /* --- Fonts & Base --- */
+  h1, h2, h3, .profile-link, .tag, .date-badge {
+    font-family: "Georgia", "Times New Roman", serif !important;
+  }
+  
+  p, li, .summary, .degree {
+      font-family: "Calibri", "Helvetica", "Arial", sans-serif;
+      font-size: 1.15rem;
+      line-height: 1.6;
   }
 
+  /* --- Dark Mode (Default) Styles --- */
   h1 {
-    font-size: 20px;
-    margin-bottom: 0.5em;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: #fdebf3;
   }
 
   h2 {
-    font-size: 18px;
-    color: #2a5078;
-    margin-top: 1em;
-    margin-bottom: 0.5em;
-  }
-
-  h3 {
-    font-size: 18px;
-    margin-bottom: 0.2em;
-  }
-
-  p {
-    margin-bottom: 12px;
-  }
-
-  /* Section & Layout */
-  .section {
-    margin-bottom: 2em;
-  }
-
-  .list {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  .list-item {
-    margin-bottom: 5px;
-  }
-
-  .list-item:before {
-    content: "–";
-    margin-right: 5px;
-    color: #555;
-  }
-
-  /* Color & Contrast */
-  .section-heading {
-    color: #2a5078;
-    border-bottom: 2px solid #2a5078;
-    padding-bottom: 4px;
-  }
-
-  a {
-    color: #2a5078;
+    font-size: 2rem;
+    border-bottom: 2px solid #78c2ad;
+    padding-bottom: 5px;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    color: #fdebf3;
     text-decoration: none;
   }
 
+  h3 {
+    font-size: 1.4rem;
+    color: #78c2ad;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+  }
+
+  .skill-category h3 {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #78c2ad;
+  }
+
+  a {
+      color: #78c2ad;
+      text-decoration: none;
+  }
+  
   a:hover {
-    text-decoration: underline;
+      text-decoration: underline;
   }
 
-  /* Skills & Keywords */
-  .skill, .keyword {
-    background-color: #e8f0fe;
-    color: #333;
-    padding: 2px 4px;
-    border-radius: 4px;
-    font-size: 14px;
+  .at {
+    color: #b4b2b3;
+    font-weight: normal;
+  }
+
+  /* --- Light Mode Overrides --- */
+  :global(.light) h1 {
+      color: #1e1e2e;
+  }
+  
+  :global(.light) h2 {
+      color: #2a5078;
+      border-bottom-color: #2a5078;
+  }
+
+  :global(.light) h3 {
+      color: #2a5078;
+  }
+
+  :global(.light) .skill-category h3 {
+      color: #1e1e2e;
+      font-weight: 800;
+  }
+
+  :global(.light) a {
+      color: #2a5078;
+  }
+  
+  :global(.light) .at {
+      color: #555;
+  }
+
+  :global(.light) p, 
+  :global(.light) li {
+      color: #1e1e2e;
+  }
+
+  /* --- Layout & Components --- */
+  .resume-wrapper {
+      padding-bottom: 4rem;
+      width: 100%; /* Fill the wider body */
+      margin: 0 auto;
+  }
+
+  .resume-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .profiles {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  /* BUTTONS */
+  .profile-link {
+    border: 2px solid #78c2ad;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    transition: all 0.2s;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fdebf3;
+    background-color: transparent;
+  }
+  
+  .profile-link:hover {
+    background-color: #78c2ad;
+    color: #1e1e2e;
+    text-decoration: none;
+  }
+  
+  /* Light Mode Buttons */
+  :global(.light) .profile-link {
+      color: #1e1e2e;
+      border-color: #1e1e2e;
+      background-color: rgba(255,255,255,0.4);
+  }
+
+  :global(.light) .profile-link:hover {
+      background-color: #1e1e2e;
+      color: #fff;
+  }
+
+  .summary {
+    font-style: italic;
+    background: rgba(120, 194, 173, 0.1);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 5px solid #78c2ad;
+    margin-bottom: 3rem;
+  }
+  
+  :global(.light) .summary {
+      background: rgba(0, 0, 0, 0.05);
+      border-left-color: #2a5078;
+  }
+
+  /* Skills Grid */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .skill-category ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .skill-category li {
+    background-color: rgba(255, 255, 255, 0.1);
     display: inline-block;
-    margin-right: 5px;
-    margin-bottom: 5px;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin: 4px;
+  }
+  
+  :global(.light) .skill-category li {
+      background-color: #dbe4f0;
+      color: #1e1e2e;
+      border: 1px solid #c0c0c0;
   }
 
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .container {
-      padding: 15px;
-    }
-
-    h1 {
-      font-size: 24px;
-    }
-
-    h2 {
-      font-size: 20px;
-    }
-
-    h3, .section-heading {
-      font-size: 18px;
-    }
+  /* Experience & Projects */
+  .job-entry, .project-entry {
+    margin-bottom: 2.5rem;
   }
 
-  /* Technical Proficiencies */
-  .proficiencies {
+  .job-header, .project-header, .edu-header {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 8px;
   }
-  .proficiency-column {
-    width: 48%;
+  
+  :global(.light) .job-header, 
+  :global(.light) .project-header, 
+  :global(.light) .edu-header {
+      border-bottom-color: rgba(0,0,0,0.15);
+  }
+
+  .date-badge {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-weight: bold;
+  }
+
+  .tech-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+  }
+  
+  .tag {
+      font-size: 0.85rem;
+      border: 1px solid #78c2ad;
+      padding: 2px 10px;
+      border-radius: 12px;
+      color: #78c2ad;
+  }
+  
+  :global(.light) .tag {
+      border-color: #333;
+      color: #333;
+      background-color: #fff;
+  }
+
+  /* Education Lists */
+  .education-list, .cert-list {
+      list-style: none;
+      padding: 0;
+  }
+  
+  .education-list li {
+      margin-bottom: 2rem;
+  }
+  
+  .job-highlights {
+      padding-left: 1.5rem;
+  }
+  
+  .cert-list li {
+      margin-bottom: 0.8rem;
+  }
+
+  /* Mobile Adjustments */
+  @media (max-width: 600px) {
+    .job-header, .edu-header, .project-header {
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.6rem; margin-top: 2rem;}
   }
 </style>
